@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import NProgress from 'nprogress';
 import HelloWorld from '@/components/HelloWorld';
 
 Vue.use(Router);
+Vue.use(NProgress);
 
-export default new Router({
+const vueRouter = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,3 +16,14 @@ export default new Router({
     },
   ],
 });
+
+vueRouter.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
+
+vueRouter.afterEach(() => {
+  NProgress.done();
+});
+
+export default vueRouter;
