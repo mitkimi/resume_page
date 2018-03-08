@@ -52,6 +52,12 @@
           <div class="clearfix"></div>
         </div>
         <el-row :gutter="20" style="color:#898989;">
+          <el-col :span="24" class="box">
+            <div class="title">
+              <span>专业技能</span>
+            </div>
+            <div class="detail"></div>
+          </el-col>
           <el-col :span="12">
             <div>
                 left side
@@ -148,5 +154,23 @@ export default {
   .icon-box a {
     color: #ffffff;
     text-decoration: none;
+  }
+  .box {
+
+  }
+  .box .title {
+    font-size: 18px;
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .box .title span {
+    background:rgba(0,0,0,.1);
+    padding:4px 16px;
+    border:1px solid rgba(0,0,0,.1);
+    border-radius:24px;
+    color:#666;
+  }
+  .box .detail {
+
   }
 </style>
