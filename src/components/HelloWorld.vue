@@ -12,7 +12,7 @@
           </div>
           <div class="clearfix"></div>
           <hr>
-          <div class="left">
+          <div class="left" style="margin-top:30px;">
             <div class="content info">
               <ul>
                 <li><i class="iconfont icon-user11"></i> {{ info.basic }}</li>
@@ -21,25 +21,25 @@
               </ul>
             </div>
           </div>
-          <div class="right">
+          <div class="right" style="margin-top:20px;">
             <div  class="content connect">
               <div class="icon-box">
-                <el-tooltip class="item" effect="dark" content="个人网站" placement="top">
+                <el-tooltip class="item ball" effect="dark" content="个人网站" placement="top">
                   <a :href="connect.web" target="_blank"><i class="iconfont icon-web3"></i></a>
                 </el-tooltip>
-                <el-tooltip class="item" effect="dark" content="Github" placement="top">
+                <el-tooltip class="item ball" effect="dark" content="Github" placement="top">
                   <a :href="connect.github" target="_blank"><i class="iconfont icon-github"></i></a>
                 </el-tooltip>
-                <el-tooltip class="item" effect="dark" content="gitee 码云" placement="top">
+                <el-tooltip class="item ball" effect="dark" content="gitee 码云" placement="top">
                   <a :href="connect.gitee" target="_blank"><i class="iconfont icon-git"></i></a>
                 </el-tooltip>
-                <el-tooltip class="item" effect="dark" content="Segmentfault" placement="top">
+                <el-tooltip class="item ball" effect="dark" content="Segmentfault" placement="top">
                   <a :href="connect.segmentfault" target="_blank">
                     <i class="iconfont icon-question"></i>
                   </a>
                 </el-tooltip>
               </div>
-              <ul>
+              <ul style="margin-top:24px;">
                 <li>{{connect.email}} <i class="iconfont icon-email"></i></li>
                 <li>{{connect.cellphone}}
                   <el-tooltip class="item" effect="light" content="请发电子邮件获取电话号码" placement="right">
@@ -51,33 +51,33 @@
           </div>
           <div class="clearfix"></div>
         </div>
-        <el-row :gutter="20" style="color:#898989;">
-          <el-col :span="24" class="box">
-            <div class="title">
-              <span>专业技能</span>
-            </div>
-            <div class="detail"></div>
+        <el-row :gutter="20" style="color:#898989;margin-top:20px;">
+          <el-col :span="12">
+            <Box />
           </el-col>
           <el-col :span="12">
-            <div>
-                left side
-            </div>
+            <Box />
           </el-col>
-          <el-col :span="12"><div>右边</div></el-col>
         </el-row>
       </el-card>
     </el-container>
+    <div class="foot">
+      Created by Vue.js. All Rights Reserved 2018, 京ICP备15063748号-1
+    </div>
   </div>
 </template>
 
 <script>
+import Box from '@/components/box';
+
 export default {
   name: 'HelloWorld',
+  components: { Box },
   mounted() {
     this.$notify({
       title: '下载pdf版简历',
       type: 'info',
-      duration: 0,
+      duration: 1,
       position: 'bottom-right',
       showClose: false,
     });
@@ -155,22 +155,19 @@ export default {
     color: #ffffff;
     text-decoration: none;
   }
-  .box {
-
+  .ball {
+    padding:10px 13px;
+    background:rgba(0,0,0,.4);
+    border-radius: 60px;
   }
-  .box .title {
-    font-size: 18px;
-    text-align:center;
-    margin-bottom:10px;
+  .ball:hover {
+    background:rgba(0,0,0,.6);
   }
-  .box .title span {
-    background:rgba(0,0,0,.1);
-    padding:4px 16px;
-    border:1px solid rgba(0,0,0,.1);
-    border-radius:24px;
-    color:#666;
-  }
-  .box .detail {
-
+  .foot {
+    color:rgba(0,0,0,.4);
+    text-align: center;
+    font-size:13px;
+    margin-top: 20px;
+    margin-bottom: 60px;
   }
 </style>
