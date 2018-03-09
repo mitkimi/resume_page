@@ -6,8 +6,13 @@
     <ul class="detail">
       <li v-for="o in list" :key="o.key">
         <div>
-          <span class="title"><i class="el-icon-arrow-right"></i> {{o.title}}</span>
-          <span class="links" v-if="urls.length>0">
+          <span class="title">
+            <i style="color:#FFCC00;">
+              <i class="iconfont icon-biaoji"></i>
+            </i>
+            {{o.title}}
+          </span>
+          <span class="links">
             <a target="_blank" v-for="i in o.urls" :href="i.url" :key="i.text">
               <el-tag
                 :key="i.text"
@@ -30,40 +35,14 @@
 <script>
 export default {
   name: 'Box',
+  props: ['infolist'],
+  mounted() {
+    // console.log(this.infolist);
+  },
   data() {
     return {
-      title: '项目经验',
-      list: [
-        {
-          key: 1,
-          title: '标题项目标题',
-          description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
-          urls: [
-            {
-              text: 'aa',
-              url: 'https://www.baidu.com',
-              type: '',
-            },
-            {
-              text: 'bb',
-              url: 'https://www.baidu1.com',
-              type: '',
-            },
-          ],
-        },
-        {
-          key: 2,
-          title: '标题',
-          description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
-          urls: [
-            {
-              text: 'cc',
-              url: 'https://www.baidu3.com',
-              type: 'success',
-            },
-          ],
-        },
-      ],
+      title: this.infolist.title,
+      list: this.infolist.list,
     };
   },
   methods: {
@@ -75,11 +54,12 @@ export default {
 <style scoped>
   .box {
     padding: 10px 18px;
+    margin-bottom: 20px;
   }
   .box .title {
     font-size: 14px;
-    text-align:center;
-    margin-bottom:10px;
+    text-align: center;
+    margin-bottom:24px;
   }
   .box .title span {
     background:rgba(0,0,0,.1);

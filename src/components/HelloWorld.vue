@@ -53,16 +53,18 @@
         </div>
         <el-row :gutter="20" style="color:#898989;margin-top:20px;">
           <el-col :span="12">
-            <Box />
+            <Box :infolist="data.projects" />
+            <Box :infolist="data.projects_p" />
           </el-col>
           <el-col :span="12">
-            <Box />
+            <Box :infolist="data.professional" />
+            <Box :infolist="data.practice" />
           </el-col>
         </el-row>
       </el-card>
     </el-container>
     <div class="foot">
-      Created by Vue.js. All Rights Reserved 2018, 京ICP备15063748号-1
+      Created by Vue.js. All Rights Reserved 2018, 京ICP备15063748号
     </div>
   </div>
 </template>
@@ -74,13 +76,13 @@ export default {
   name: 'HelloWorld',
   components: { Box },
   mounted() {
-    this.$notify({
+    /* this.$notify({
       title: '下载pdf版简历',
       type: 'info',
-      duration: 1,
+      duration: 0,
       position: 'bottom-right',
       showClose: false,
-    });
+    }); */
   },
   data() {
     return {
@@ -99,6 +101,150 @@ export default {
         segmentfault: 'https://segmentfault.com/u/mitkimi',
         email: 'i@mitkimi.com',
         cellphone: '156 **** 5231',
+      },
+      data: {
+        projects: {
+          title: '项目经验 - 公司',
+          list: [
+            {
+              key: 1,
+              title: 'U味儿新版CRM管理和接单系统（isomopic）',
+              description: '使用webpack作为打包工具，前端技术栈使用react + react-router + antd等框架及库，采用前后端同构的形式满足搜索引擎内容抓取。为保证代码整洁和规范其他前端开发人员的代码习惯使用eslint Airbnb标准进行代码编写。项目结构方面，分为数据模型（model）、页面级组件（page）、公用组件（component）和工具（utility）等。代码托管平台：coding.net',
+              urls: [
+                {
+                  text: 'CRM',
+                  url: 'http://crm2.uweer.com',
+                  type: 'success',
+                },
+                {
+                  text: '接单系统',
+                  url: 'http://waimai.uweer.com',
+                  type: 'success',
+                },
+              ],
+            },
+            {
+              key: 2,
+              title: 'U果新CRM和接单系统中端 - api（内部名称：三元桥）',
+              description: '核心技术使用ThinkPHP5.x框架，使用运行环境为apache2、php5.4以上环境。用于对接微信小程序',
+              urls: [],
+            },
+            {
+              key: 3,
+              title: 'U果Lite - 微信小程序（内部名称：小苹果）',
+              description: '核心技术使用ThinkPHP5.x框架，使用运行环境为apache2、php5.4以上环境。用于对接微信小程序',
+              urls: [
+                {
+                  text: 'U果Lite',
+                  url: '#',
+                  type: 'warning',
+                },
+              ],
+            },
+          ],
+        },
+        projects_p: {
+          title: '项目经验 - 个人',
+          list: [
+            {
+              key: 1,
+              title: '公交报站器（pc-web）管理端',
+              description: '使用vue-cli脚手架构建项目，配合webpack作为打包工具、vue-router的hash模式（可转history模式）、element UI作为样式库。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://www.baidu.com',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://www.baidu1.com',
+                  type: 'success',
+                },
+              ],
+            },
+            {
+              key: 2,
+              title: '标题',
+              description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
+              urls: [
+                {
+                  text: 'cc',
+                  url: 'https://www.baidu3.com',
+                  type: 'success',
+                },
+              ],
+            },
+          ],
+        },
+        professional: {
+          title: '专业技能',
+          list: [
+            {
+              key: 1,
+              title: '标题项目标题',
+              description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://www.baidu.com',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://www.baidu1.com',
+                  type: 'success',
+                },
+              ],
+            },
+            {
+              key: 2,
+              title: '标题',
+              description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
+              urls: [
+                {
+                  text: 'cc',
+                  url: 'https://www.baidu3.com',
+                  type: 'success',
+                },
+              ],
+            },
+          ],
+        },
+        practice: {
+          title: '实践',
+          list: [
+            {
+              key: 1,
+              title: '标题项目标题',
+              description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://www.baidu.com',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://www.baidu1.com',
+                  type: 'success',
+                },
+              ],
+            },
+            {
+              key: 2,
+              title: '标题',
+              description: '描述的内容，需要长一点。描述的内容，点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。描述的内容，需要长一点。',
+              urls: [
+                {
+                  text: 'cc',
+                  url: 'https://www.baidu3.com',
+                  type: 'success',
+                },
+              ],
+            },
+          ],
+        },
       },
     };
   },
@@ -159,9 +305,12 @@ export default {
     padding:10px 13px;
     background:rgba(0,0,0,.4);
     border-radius: 60px;
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    color:#f90;
   }
   .ball:hover {
     background:rgba(0,0,0,.6);
+    box-shadow: 0 0 8px rgba(0,0,0,.6);
   }
   .foot {
     color:rgba(0,0,0,.4);
