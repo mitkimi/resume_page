@@ -13,7 +13,7 @@
             {{o.title}}
           </span>
           <span class="links">
-            <a target="_blank" v-for="i in o.urls" :href="i.url" :key="i.text">
+            <a target="_blank" v-if="i.url != '#'" v-for="i in o.urls" :href="i.url" :key="i.text">
               <el-tag
                 :key="i.text"
                 :type="i.type"
@@ -21,6 +21,16 @@
                 {{i.text}}
               </el-tag>
             </a>
+            <span target="_blank"
+            v-if="i.url == '#'"
+            v-for="i in o.urls" :href="i.url" :key="i.text">
+              <el-tag
+                :key="i.text"
+                :type="i.type"
+                size="mini">
+                {{i.text}}
+              </el-tag>
+            </span>
           </span>
           <div class="clearfix"></div>
           <div class="description">
@@ -83,6 +93,9 @@ export default {
   .box .detail .links a:link, .box .detail .links a:visited{
     margin-left: 5px;
     text-decoration: none;
+  }
+  .box .detail .links span {
+    margin-left:5px;
   }
   .box .detail .description {
     font-size:14px;
