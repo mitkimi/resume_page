@@ -60,12 +60,14 @@
           <el-col :span="12">
             <Box :infolist="data.professional" />
             <Box :infolist="data.practice" />
+            <Box :infolist="data.comingsoon" />
           </el-col>
         </el-row>
       </el-card>
     </el-container>
     <div class="foot">
-      Created by Vue.js. All Rights Reserved 2018, {{ icpno }}
+      Created by Vue.js. Powered by mitkimi.com. All Rights Reserved
+      <span>2017 ～ 2018</span>, {{ icpno }}
     </div>
   </div>
 </template>
@@ -77,13 +79,7 @@ export default {
   name: 'HelloWorld',
   components: { Box },
   mounted() {
-    /* this.$notify({
-      title: '下载pdf版简历',
-      type: 'info',
-      duration: 0,
-      position: 'bottom-right',
-      showClose: false,
-    }); */
+    this.showDownload();
   },
   data() {
     return {
@@ -319,10 +315,87 @@ export default {
             },
           ],
         },
+        comingsoon: {
+          title: '即将上线',
+          list: [
+            {
+              key: 1,
+              title: 'TOS - 教师学生约课系统（SaaS）',
+              description: '此系统将满足中小琴行、街舞教室、一对一培训机构和小型驾校等教师学生上课时间约定的软需求。管理端使用PCWeb，客户端使用微信小程序上线。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://url.ipietech.net/demo/tos.html',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://url.ipietech.net/docs/tos.html',
+                  type: '',
+                },
+              ],
+            },
+            {
+              key: 2,
+              title: '租个车HiCar - 小型租车系统',
+              description: '此系统将满足二三线城市租车公司以及中小型租赁行业公司的公共关系和客户管理需求。管理端使用PCWeb，客户端将在iOS、安卓和微信小程序三个平台上线。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://url.ipietech.net/demo/hicar.html',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://url.ipietech.net/docs/hicar.html',
+                  type: '',
+                },
+              ],
+            },
+            {
+              key: 3,
+              title: 'Oxygen氧气 - 每个人都需要的企业IM',
+              description: '此系统设计为改善钉钉的操作体验和满足数据保密。管理端使用PCWeb，客户端将在MacOS、Windows、iOS、安卓和微信小程序五个平台上线。',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://url.ipietech.net/demo/hicar.html',
+                  type: '',
+                },
+                {
+                  text: 'DOCs',
+                  url: 'https://url.ipietech.net/docs/hicar.html',
+                  type: '',
+                },
+              ],
+            },
+            {
+              key: 4,
+              title: 'ipietech.com',
+              description: '',
+              urls: [
+                {
+                  text: 'DEMO',
+                  url: 'https://www.ipietech.com/demo/ipietech.com.html',
+                  type: '',
+                },
+              ],
+            },
+          ],
+        },
       },
     };
   },
   methods: {
+    showDownload() {
+      this.$notify({
+        title: '下载pdf版简历',
+        type: 'info',
+        duration: 0,
+        position: 'bottom-right',
+        showClose: false,
+      });
+    },
   },
 };
 </script>
