@@ -52,12 +52,12 @@
           <div class="clearfix"></div>
         </div>
         <el-row :gutter="20" style="color:#898989;margin-top:20px;">
-          <el-col :span="12">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
             <Box :infolist="data.projects" />
             <Box :infolist="data.history" />
             <Box :infolist="data.projects_p" />
           </el-col>
-          <el-col :span="12">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
             <Box :infolist="data.professional" />
             <Box :infolist="data.practice" />
             <Box :infolist="data.comingsoon" />
