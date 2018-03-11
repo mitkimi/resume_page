@@ -171,7 +171,7 @@ export default {
             {
               key: 1,
               title: '公交报站器（pc-web）管理端',
-              description: '使用vue-cli脚手架构建项目，配合webpack作为打包工具、vue-router的hash模式（可转history模式）、element UI作为样式库。代码托管平台：github',
+              description: '使用vue-cli脚手架构建项目，配合webpack作为打包工具、vue-router的hash模式（可转history模式）、element UI作为样式库。eslint Airbnb作为代码格式规范标准。代码托管平台：github',
               urls: [
                 {
                   text: '管理端',
@@ -371,12 +371,12 @@ export default {
             },
             {
               key: 4,
-              title: 'ipietech.com',
-              description: '',
+              title: 'cmss.ipietech.net',
+              description: '配色展示类页面站。代码托管平台：github',
               urls: [
                 {
                   text: 'DEMO',
-                  url: 'https://www.ipietech.com/demo/ipietech.com.html',
+                  url: 'https://www.ipietech.com/demo/cmss.html',
                   type: '',
                 },
               ],
@@ -394,6 +394,9 @@ export default {
         duration: 0,
         position: 'bottom-right',
         showClose: false,
+        onClick: () => {
+          window.location.href = 'https://files.ipietech.net/田玉可简历-高级前端工程师.pdf';
+        },
       });
     },
   },
